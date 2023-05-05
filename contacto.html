@@ -1,0 +1,87 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+        <meta name="description" content="Club Literario de la ciudad de La Plata">
+        <meta name="keywords" content="libros literatura literario club lectura autores novelas plata ensenada Berisso biblioteca ficcion">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="El Clú">
+        <meta property="og:description" content="Club Literario de la ciudad de La Plata">
+        <meta propety="og:image" content="https://cdn.pixabay.com/photo/2016/09/08/22/43/books-1655783_640.jpg">
+        <meta property="url" content="https://preentrega3augustofernandez.netlify.app/index.html">
+    <!-- SEO -->
+
+    <link rel="stylesheet" href="estilos.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/14982d846d.js" crossorigin="anonymous"></script> 
+    <title>El Clú - Contacto</title>
+
+</head>
+<body>
+        <div class="containerGeneralContacto">                          <!-- Contenedor genenal de la pag -->
+                <header class="header">                                 <!-- Caja para colocar logo y texto/cita -->
+                        <div class="imagenHeader"></div>                <!--Contenedor para colocar img logo grande-->
+                        <div class="citaHeader">                        <!--Contenedor para titulo/cita -->  
+                                <h1>"A veces levantaban los ojos de sus estudios, se sonreían, y volvían a la lectura"</h1><q>Stoner</q>
+                                <h3 class="h3clu"> Club de lectura </h3>
+                        </div>
+                </header>
+
+                <nav class="flex-container" id="top" >                  <!-- barra navegadora links superior -->
+                                     
+                        <div class="flex-boton"><a href="index.html">Inicio</a></div> <!-- link entre pag propias -->
+                        <div class="flex-boton"><a href="leidos.html">Los que ya leímos</a></div>
+                        <div class="flex-boton"><a href="index.html">Pre-registro</a></div>
+                        
+                </nav>                  <!-- hasta aca copia parte superior de la pagina igual en todas -->
+
+                
+                
+                <article class="contacto"> <!-- Contenedor general para las distintas partes de form -->
+                        
+                        <form action="registros.php" method="get" class="preContacto">                                    
+                                <div class="cajaInt">
+                                <br> 
+                                        <!--aplico la clase de bootstrsp form-control-->       
+                                        <input class="form-control" type="text" name="registro" value="" maxlength="100" size="30"  placeholder="Nombre y Apellido" >
+                        
+                                        <input class="form-control" type="email" name="correo" placeholder="e-mail">
+                          
+                                        <textarea class="form-control" type="text" data-input-type="textarea" rows="5" cols="60%">
+                                        </textarea>   
+                        <br>                                                   
+                                        <input class="form-control" type="submit">
+                                </div>
+                        </form>
+                </article>
+
+                <article class="textPreCont" id="linkPre"><h2>Dejanos tu mensaje</h2> <p></p></article>             
+
+                
+                <footer class="pie-pagina">                             <!--Contenedor footer/redes-->
+                                <div class="grupo">
+                                    <div class="box">
+                                        <h2>Seguinos</h2>
+                                        <div class="red-social">        <!--Link de redes -->  
+                                            <a href="https://www.facebook.com/el.clu.laplata" target="_blank" class="fa fa-facebook"></a>                    
+                                            <a href="https://www.instagram.com/el.clu.laplata/" target="_blank" class="fa fa-instagram"></a>
+                                            <a href="https://wwww.twitter.com" target="_blank" class="fa fa-twitter"></a>
+                                        </div>
+                                    </div>
+                        
+                                </div>
+                         
+                </footer>
+                
+        </div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>     
+</body>
+</html>

@@ -1,0 +1,738 @@
+@use '_cardLibros.scss'; // Llamada a otro sass, doy caracteristicas de la pag de leidos con un sass independiente. 
+
+* // reseteo css body
+{
+    margin: 0;
+    padding: 0;
+}
+
+//variables de SASS
+
+    $primColor: #669999;
+    $secundColor: #99CCCC;
+    $tercerdColor: #9acca7;
+    $complementarioColor: orange;
+    $colorTexto: black;
+    $fondoColor: rgb( 230, 230, 230 );
+    $familiasTitulos: 'Yeseva One', cursive, Georgia, 'Times New Roman', Times, serif;
+    $familiasTexto: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+body 
+{
+    background-color: $fondoColor !important; //da prioridad al fondo del body
+    width: 100%;
+    height: 100%;
+    max-height: 1500px;
+}     
+
+.containerGeneral //seteo de div que contiene el cuerpo de la pagina
+{
+    width: 70%;
+    margin: 0 auto;
+    max-width: 1500px; 
+    max-height: fit-content;
+            
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-rows: 4% 55% 50% 40% 30% 12%;
+    
+    grid-template-areas:    'naveg naveg'
+                            'header header'
+                            'txtH imgH'
+                            'car car'
+                            'form txtP'
+                            'footer footer'
+
+}
+
+
+//*************** BARRA MENU *********
+
+.flex-container //caracteristicas/contenedor gral de botones. Declara area grid
+{
+    background-color: $secundColor;
+    width: 100%;
+    height: 100%;
+  	padding-right: 1%;
+    font-family: $familiasTexto;
+    font-weight: bold;
+    font-size: large; 
+    
+	display: flex;
+    justify-content: end;
+  	gap: 10px;
+  	align-items: center;
+    grid-area: naveg;
+}
+
+.flex-boton //botones
+{
+    padding: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.432);
+    border-radius: 5px;
+
+    a //anidamiento de link y uso de & para incluirlo en menos lineas 
+    {
+        color: $colorTexto;
+        text-decoration: none;   
+        
+        &:hover //interaccion hover anidada y &
+        {
+            color: $complementarioColor;
+        }
+    }
+}
+
+
+//***********LOGO Y CITA *********
+
+.header //div gral, tamaño y grillado
+{ 
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 50% auto;
+}
+
+.imagenHeader //div para el logo y posicion del mismo
+{
+    align-items: center;
+    background-image: url('Imagenes/LOGO-HEADER.png');
+    background-position: 35% center;
+    background-repeat: no-repeat;
+    background-size: contain;     
+}
+
+.citaHeader //div para completar con texto, cita de algún autor
+{
+    color: $colorTexto;
+    background-color: $primColor;
+    width: 100%;
+    font-family: $familiasTitulos;
+    padding: 15% 0 0 10%;
+    
+    h3 //subtitulo de la pag. club de lectura
+    {
+        display: none;
+        padding-left: 30%;
+        padding-right: 10%;
+        font-style: italic;
+    }
+}
+
+//***********Parrafo y Foto *********
+
+h2 //seteo gral de toda los h2 de la pag
+{
+    font-family: $familiasTitulos;
+}
+
+.txtHistoria //div texto, resumen de la historia. Declara area grid
+{
+    background-color: $fondoColor;
+    padding: 5% 8% 5% 8%;
+    font-family: $familiasTexto;
+    font-size: 20px;
+    grid-area: txtH;
+}
+
+.imgHistoria //div para la foto de las fundadoras. Declara area grid
+{
+    background-color: $secundColor;
+    background-image: url('Imagenes/2.jpg');
+    background-position:  center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: imgH;
+}
+
+//********** IMAGENES ********* 
+
+.corrousel //portada de galeria de imagenes, seteo de img link a galeria. Declara area grid
+{
+    background-color: $fondoColor;
+    background-image: url('Imagenes/biblioteca.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    grid-area: car;
+    
+    a //anidamiento de otras etiquetas dentro de la clase de la galeria. Link ID
+    {
+        text-decoration: none;
+    }
+    h2 //formateo de titulo
+    {
+        font-family: $familiasTitulos;
+        color:$colorTexto;
+        background-color: $secundColor;
+        padding-left: 15px;
+        justify-content: center;
+    
+    }
+}
+
+//********** Formulario Pre-registro *********
+
+.formulario // seteo de los campos del formulario de pre registro. Declara area grid
+{
+    padding: 5px 40px 30px 40px;
+    background-image: url('Imagenes/1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: grayscale(0.5);
+    grid-area: form;
+}
+
+.pre
+{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.textPre //anidamiento de los elementos dentro de la clase contenedora del parrafo de texto de pre reg. Declara area grid
+{
+    background-color: $secundColor;
+    font-family: $familiasTexto;
+    text-align: justify;
+    grid-area: txtP;
+
+    h2
+    {
+        background-color: $complementarioColor;
+        padding-left: 15px;
+    }
+    p 
+    {
+        padding: 0 20px 0 15px;
+        font-size: 20px;
+    }
+}
+
+//**********Footer  Redes *********
+
+footer //Declara area grid
+{
+    background-color: $primColor;
+    grid-area: footer;
+}
+.pie-pagina //anidamiento de los elementos dentro de footer
+{
+    width: 100%;
+    height: 100%;
+    background-color: $primColor;
+    .grupo
+    {
+        width: 100%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat (3, 1fr);
+        grid-gap: 50px;
+        padding-top: 5px;
+        .box
+        {
+            color: $colorTexto;
+            font-size: 20px;
+            h2 
+            {
+                background-color: $complementarioColor;
+                padding-left: 45%;
+            }
+        }
+        .red-social a //caracteristicas de los link de footer
+        {
+            display: inline-block;
+            text-decoration: none;
+            width: 45px;
+            height: 45px;
+            line-height: 50px;
+            color: white;
+            margin-right: 50px;      
+            background-color: $primColor;
+            padding: 5px 0px 0px 22%;
+            font-size: 45px;
+
+            &:hover //comportamiento con cursor arriba
+            {
+                color: $complementarioColor;
+            }
+
+        }
+    }                     
+}
+    
+
+//*********************************************
+//********** responsive estadio medio ********* 
+//*********************************************
+
+@media screen and (min-width: 576px) and (max-width: 992px) 
+{
+    
+    .containerGeneral //seteo de tamaños y area de grillas
+    {
+        width: 100%;
+        min-width: 576px;
+        max-width: 992px;
+        
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        grid-template-rows: 0.1fr 1.1fr auto 1.4fr 1fr 0.4fr 1fr 0.3fr;
+                
+    }
+
+    
+//*************** BARRA MENU MEDIO *********
+
+    .flex-container 
+    {
+        padding-right: 10px;
+        font-size: 14px ;
+        gap: 8px;
+  	    
+    }
+    
+//***********LOGO Y CITA MEDIO*********
+    .citaHeader
+    {
+        padding: 12% 1% 0 10%;
+        
+    }
+   
+//***********Parrafo y Foto  MEDIO*********
+    .txtHistoria
+    {
+        font-size: 18px;
+    }   
+    
+
+//********** Formulario Pre-registro MEDIO *********
+    
+    
+    .textPre // anidamiento del texto y titulo de pre registro
+    {
+        font-size: 15px;
+        text-align: left;
+        
+        p 
+        {
+            padding-left: 7px;
+        }
+
+        h2
+        {
+            padding: 1px 10px 0 7px;
+        }
+    }
+   
+//**********Footer  Redes MEDIO ********* 
+     
+    .pie-pagina .grupo // anidamiento del texto, links y titulo de footer
+    {
+        min-width: 576px;
+        max-width: 992px;
+        .box
+        {
+            color: $colorTexto;
+            font-size: 20px;
+            h2 
+            {
+                padding-left: 38%;
+            }
+        }    
+        .red-social a
+        {
+            margin-right: 60px;      
+            padding: 5px 0px 0px 18%;
+            font-size: 50px;
+        }
+    }
+
+}
+
+//*********************************************
+//********** responsive estadio chico *********
+//********************************************* 
+
+@media screen and (max-width: 575px) //seteo div contenedor gral responsive
+{
+        .containerGeneral //seteo de tamaños y area de grillas
+        {
+            min-width: 575px;
+            min-height: fit-content;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.1fr 1fr auto 1fr 1fr 0.4fr 1fr 0.3fr;        
+            grid-template-areas:    'naveg' // una sola columna de contenido (para celular)
+                                    'header'                                 
+                                    'imgH'
+                                    'txtH'
+                                    'car'
+                                    'txtP'
+                                    'form'
+                                    'footer'
+        }
+
+        //***********LOGO Y CITA CHICO********* 
+
+        .header // anidamiento del texto y titulo de header
+        { 
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr .1fr;
+            .citaHeader 
+            {
+                padding: 2% 1% 0% 10%;
+                justify-content: center;
+
+                h1 //dejar de mostrar el h1 Cita
+                {
+                    display: none;
+                }
+
+                q
+                {
+                    display: none;
+                }
+
+                h3
+                {
+                    display: inline-block;              
+                }
+            }
+        
+        }
+        .imagenHeader
+        {   
+            background-position: center;
+        }
+
+        
+
+        //*************** BARRA MENU CHICO *********
+
+        .flex-container 
+        {   
+            padding-right: 10px; 
+            font-size: 14px ;
+            justify-content: center;
+      	    gap: 6px;
+  	       
+        }
+        
+        //***********Parrafo y Foto  CHICO *********
+              
+        .txtHistoria // anidamiento del texto y titulo del div area historia
+        {
+            font-size: 17px;
+            text-align: justify;
+            h2
+            {
+                padding-left: 26%;
+            }
+        }
+   
+        .imgHistoria //dejar de mostrar img/foto de historia
+        {
+            display: none;
+        }
+
+        //********** IMAGENES CHICO *********
+
+        .corrousel
+        {
+            background-size: cover;   
+            h2
+            {
+                padding-left: 31%;
+            }         
+        }
+         
+        //********** Formulario Pre-registro CHICO *********
+
+        .textPre // anidamiento del texto y titulo de pre registro
+        {
+            font-size: 16px;
+            text-align: justify;
+            padding: 18px 18px 0px 18px;
+            grid-area: txtP;  
+            h2
+            {
+                padding-left: 35%;
+            }
+            p 
+            {
+                font-size: 17px;
+            }
+        }
+       
+        .formulario
+        {
+            padding: 5% 5% 5% 5%; 
+            
+        }
+
+        
+        //**********Footer  Redes CHICO *********
+           
+        .pie-pagina .grupo // anidamiento de div footer, se acomoda tamaño y sangria
+        {
+            max-width: 480px;
+            .box h2 
+            {
+                padding-left: 35%;
+            }
+    
+            .red-social a
+            {
+                padding: 10px 0px 0px 17%;
+            }
+        }          
+       
+}
+
+//*************************************************
+//************** SCSS de CONTACTOS ****************
+//*************************************************
+
+
+.containerGeneralContacto //seteo de tamaños y area de grillas
+{
+    
+        width: 70%;
+        margin: 0 auto;
+        max-width: 1500px; 
+        max-height: fit-content;
+                        
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        grid-template-rows: 6% 55% 50% 40% 20% 18%;
+        
+        grid-template-areas:    'naveg naveg'
+                                'header header'
+                                'cont txtCont'
+                                'x x'
+                                'footer footer'
+    
+    
+
+}
+
+.contacto // seteo div contenedor de formulario de contacto e imagen de fondo del mismo
+{
+    padding: 5px 40px 30px 40px;
+    background-image: url('Imagenes/4.jpg');
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: grayscale(0.7);
+    grid-area: cont ;
+    
+}
+.preContacto
+{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.textPreCont  // div al lado de formulario, solo aparece titulo. Buscarle funcion o contenido
+{
+    background-color: $secundColor;
+    font-family: $familiasTexto;
+    text-align: justify;
+    grid-area: txtCont;
+    h2
+    {
+        background-color: $complementarioColor;
+        padding-left: 15px;
+    }
+    
+    p 
+    {
+        padding: 0 20px 0 15px;
+        font-size: 20px;
+    }
+}
+
+//*********************************************
+//********** responsive estadio medio *********
+//********************************************* 
+
+@media screen and (min-width: 576px) and (max-width: 992px)
+{
+    
+    .containerGeneralContacto //seteo de tamaños y area de grillas
+    {
+        width: 100%;
+        min-width: 576px;
+        max-width: 992px;
+        
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        grid-template-rows: 0.1fr 1.1fr auto 1.4fr 1fr 0.4fr 1fr 0.3fr;
+                
+    }
+
+//********** Formulario Pre-registro MEDIO *********
+    
+    .textPreCont // div al lado de formulario, solo aparece titulo. Buscarle funcion o contenido. Anidamiento de elementos 
+    {
+        font-size: 15px;
+        text-align: left;
+        p 
+        {
+            padding-left: 7px;
+        }
+        h2
+        {
+            padding: 1px 10px 0 7px;
+        }
+    }
+    
+//**********Footer  Redes MEDIO *********
+
+       
+    .pie-pagina .grupo //anidamiento del contenido de footer
+    {
+        min-width: 576px;
+        max-width: 992px;
+        .box
+        {
+            color: $colorTexto;
+            font-size: 20px;
+            h2 
+            {
+                padding-left: 38%;
+            }
+        }
+        .red-social a
+        {
+            margin-right: 60px;      
+            padding: 5px 0px 0px 18%;
+            font-size: 50px;
+        }    
+    }
+}
+
+//********************************************
+//********** responsive estadio chico *********
+//********************************************* 
+
+@media screen and (max-width: 575px) 
+{
+        .containerGeneralContacto //seteo de tamaños y areas de la grilla
+        {
+            min-width: 575px;
+            min-height: fit-content;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.1fr 1fr auto 1fr 1fr 1fr 0.3fr;        
+            grid-template-areas:    'naveg' // una sola columna de contenido (para celular)
+                                    'header'                                 
+                                    'txtCont'
+                                    'cont'
+                                    'x'
+                                    'footer'
+                                   
+        }      
+ 
+        //********** Formulario Pre-registro CHICO ********* 
+
+        .textPreCont
+        {
+            font-size: 16px;
+            text-align: justify;
+            padding: 18px 18px 0px 13px;
+            grid-area: txtCont;  
+            h2
+            {
+                padding-left: 26%;
+            }
+            p 
+            {
+                font-size: 17px;
+            }
+        }
+    }
+    
+
+//**************************************************
+//********** SCSS de Galeria de libros *************
+//**************************************************
+    
+.containerGeneralGaleria //seteo de div que contiene el cuerpo de la pagina
+{
+    width: 70%;
+    margin: 0 auto;
+    max-width: 1500px; 
+    max-height: fit-content;
+    min-width: 1000px;
+            
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-rows: 0.3fr 20% 80% 10% 7%;
+    
+    grid-template-areas:    'naveg naveg'
+                            'header header'
+                            'gral gral'
+                            'x x ' //area falsa para sumar espacio
+                            'footer footer'
+
+}
+
+.generalImg //Declara area grid 
+{
+    grid-area: gral;
+    .containerPol
+    {
+        width: 100%;
+    }
+}
+
+//************************************************************
+//********** responsive estadio medio galeria leidos *********
+//************************************************************
+
+@media screen and (min-width: 576px) and (max-width: 992px)
+{
+    
+    .containerGeneralGaleria //seteo de tamaños y area de grillas
+    {
+        width: 100%;
+        min-width: 576px;
+        max-width: 992px;
+        
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        grid-template-rows: 0.2fr 1.3fr 85% 10% 0.3fr;
+        grid-template-areas:    'naveg naveg'
+                                'header header'
+                                'gral gral'
+                                'x x ' //area falsa para sumar espacio
+                                'footer footer'
+                
+    }
+
+}
+
+//************************************************************
+//********** responsive estadio chico galeria leidos *********
+//************************************************************
+
+@media screen and (max-width: 575px) 
+{
+        .containerGeneralGaleria //seteo de tamaños y areas de la grilla
+        {
+            min-width: 575px;
+            min-height: fit-content;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.1fr 1fr auto 1fr 0.3fr;        
+            grid-template-areas:    'naveg' // una sola columna de contenido (para celular)
+                                    'header'                                 
+                                    'gral'
+                                    'x' //area falsa para sumar espacio
+                                    'footer'
+                                   
+        }      
+    }
+    

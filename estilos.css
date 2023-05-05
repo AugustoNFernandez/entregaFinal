@@ -1,0 +1,521 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.generalImg {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.containerPol {
+  position: relative;
+  width: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+.containerPol .card {
+  position: relative;
+  max-width: 300px;
+  height: 420px;
+  background-color: #ffffff;
+  margin: 30px 10px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+}
+.containerPol .card:hover {
+  height: 420px;
+}
+.containerPol .card:hover .content {
+  visibility: visible;
+  opacity: 1;
+  margin-top: -40px;
+  transition-delay: 0.3s;
+}
+.containerPol .card .imgBox {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  left: 4px;
+  z-index: 1;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+.containerPol .card .imgBox img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+.containerPol .card .content {
+  position: relative;
+  margin-top: -140px;
+  padding: 50px 15px;
+  text-align: center;
+  color: #111;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  font-size: 13px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.containerPol .card .content h2, .containerPol .card .content h3, .containerPol .card .content h4, .containerPol .card .content h5, .containerPol .card .content h6 {
+  font-family: "Yeseva One", cursive, Georgia, "Times New Roman", Times, serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(230, 230, 230) !important;
+  width: 100%;
+  height: 100%;
+  max-height: 1500px;
+}
+
+.containerGeneral {
+  width: 70%;
+  margin: 0 auto;
+  max-width: 1500px;
+  max-height: fit-content;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-rows: 4% 55% 50% 40% 30% 12%;
+  grid-template-areas: "naveg naveg" "header header" "txtH imgH" "car car" "form txtP" "footer footer";
+}
+
+.flex-container {
+  background-color: #99CCCC;
+  width: 100%;
+  height: 100%;
+  padding-right: 1%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  font-size: large;
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  align-items: center;
+  grid-area: naveg;
+}
+
+.flex-boton {
+  padding: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.432);
+  border-radius: 5px;
+}
+.flex-boton a {
+  color: black;
+  text-decoration: none;
+}
+.flex-boton a:hover {
+  color: orange;
+}
+
+.header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 50% auto;
+}
+
+.imagenHeader {
+  align-items: center;
+  background-image: url("Imagenes/LOGO-HEADER.png");
+  background-position: 35% center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.citaHeader {
+  color: black;
+  background-color: #669999;
+  width: 100%;
+  font-family: "Yeseva One", cursive, Georgia, "Times New Roman", Times, serif;
+  padding: 15% 0 0 10%;
+}
+.citaHeader h3 {
+  display: none;
+  padding-left: 30%;
+  padding-right: 10%;
+  font-style: italic;
+}
+
+h2 {
+  font-family: "Yeseva One", cursive, Georgia, "Times New Roman", Times, serif;
+}
+
+.txtHistoria {
+  background-color: rgb(230, 230, 230);
+  padding: 5% 8% 5% 8%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+  grid-area: txtH;
+}
+
+.imgHistoria {
+  background-color: #99CCCC;
+  background-image: url("Imagenes/2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-area: imgH;
+}
+
+.corrousel {
+  background-color: rgb(230, 230, 230);
+  background-image: url("Imagenes/biblioteca.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  grid-area: car;
+}
+.corrousel a {
+  text-decoration: none;
+}
+.corrousel h2 {
+  font-family: "Yeseva One", cursive, Georgia, "Times New Roman", Times, serif;
+  color: black;
+  background-color: #99CCCC;
+  padding-left: 15px;
+  justify-content: center;
+}
+
+.formulario {
+  padding: 5px 40px 30px 40px;
+  background-image: url("Imagenes/1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(0.5);
+  grid-area: form;
+}
+
+.pre {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.textPre {
+  background-color: #99CCCC;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: justify;
+  grid-area: txtP;
+}
+.textPre h2 {
+  background-color: orange;
+  padding-left: 15px;
+}
+.textPre p {
+  padding: 0 20px 0 15px;
+  font-size: 20px;
+}
+
+footer {
+  background-color: #669999;
+  grid-area: footer;
+}
+
+.pie-pagina {
+  width: 100%;
+  height: 100%;
+  background-color: #669999;
+}
+.pie-pagina .grupo {
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat 3, 1fr;
+  grid-gap: 50px;
+  padding-top: 5px;
+}
+.pie-pagina .grupo .box {
+  color: black;
+  font-size: 20px;
+}
+.pie-pagina .grupo .box h2 {
+  background-color: orange;
+  padding-left: 45%;
+}
+.pie-pagina .grupo .red-social a {
+  display: inline-block;
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  line-height: 50px;
+  color: white;
+  margin-right: 50px;
+  background-color: #669999;
+  padding: 5px 0px 0px 22%;
+  font-size: 45px;
+}
+.pie-pagina .grupo .red-social a:hover {
+  color: orange;
+}
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .containerGeneral {
+    width: 100%;
+    min-width: 576px;
+    max-width: 992px;
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    grid-template-rows: 0.1fr 1.1fr auto 1.4fr 1fr 0.4fr 1fr 0.3fr;
+  }
+  .flex-container {
+    padding-right: 10px;
+    font-size: 14px;
+    gap: 8px;
+  }
+  .citaHeader {
+    padding: 12% 1% 0 10%;
+  }
+  .txtHistoria {
+    font-size: 18px;
+  }
+  .textPre {
+    font-size: 15px;
+    text-align: left;
+  }
+  .textPre p {
+    padding-left: 7px;
+  }
+  .textPre h2 {
+    padding: 1px 10px 0 7px;
+  }
+  .pie-pagina .grupo {
+    min-width: 576px;
+    max-width: 992px;
+  }
+  .pie-pagina .grupo .box {
+    color: black;
+    font-size: 20px;
+  }
+  .pie-pagina .grupo .box h2 {
+    padding-left: 38%;
+  }
+  .pie-pagina .grupo .red-social a {
+    margin-right: 60px;
+    padding: 5px 0px 0px 18%;
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .containerGeneral {
+    min-width: 575px;
+    min-height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 1fr auto 1fr 1fr 0.4fr 1fr 0.3fr;
+    grid-template-areas: "naveg" "header" "imgH" "txtH" "car" "txtP" "form" "footer";
+  }
+  .header {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.1fr;
+  }
+  .header .citaHeader {
+    padding: 2% 1% 0% 10%;
+    justify-content: center;
+  }
+  .header .citaHeader h1 {
+    display: none;
+  }
+  .header .citaHeader q {
+    display: none;
+  }
+  .header .citaHeader h3 {
+    display: inline-block;
+  }
+  .imagenHeader {
+    background-position: center;
+  }
+  .flex-container {
+    padding-right: 10px;
+    font-size: 14px;
+    justify-content: center;
+    gap: 6px;
+  }
+  .txtHistoria {
+    font-size: 17px;
+    text-align: justify;
+  }
+  .txtHistoria h2 {
+    padding-left: 26%;
+  }
+  .imgHistoria {
+    display: none;
+  }
+  .corrousel {
+    background-size: cover;
+  }
+  .corrousel h2 {
+    padding-left: 31%;
+  }
+  .textPre {
+    font-size: 16px;
+    text-align: justify;
+    padding: 18px 18px 0px 18px;
+    grid-area: txtP;
+  }
+  .textPre h2 {
+    padding-left: 35%;
+  }
+  .textPre p {
+    font-size: 17px;
+  }
+  .formulario {
+    padding: 5% 5% 5% 5%;
+  }
+  .pie-pagina .grupo {
+    max-width: 480px;
+  }
+  .pie-pagina .grupo .box h2 {
+    padding-left: 35%;
+  }
+  .pie-pagina .grupo .red-social a {
+    padding: 10px 0px 0px 17%;
+  }
+}
+.containerGeneralContacto {
+  width: 70%;
+  margin: 0 auto;
+  max-width: 1500px;
+  max-height: fit-content;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-rows: 6% 55% 50% 40% 20% 18%;
+  grid-template-areas: "naveg naveg" "header header" "cont txtCont" "x x" "footer footer";
+}
+
+.contacto {
+  padding: 5px 40px 30px 40px;
+  background-image: url("Imagenes/4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(0.7);
+  grid-area: cont;
+}
+
+.preContacto {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.textPreCont {
+  background-color: #99CCCC;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: justify;
+  grid-area: txtCont;
+}
+.textPreCont h2 {
+  background-color: orange;
+  padding-left: 15px;
+}
+.textPreCont p {
+  padding: 0 20px 0 15px;
+  font-size: 20px;
+}
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .containerGeneralContacto {
+    width: 100%;
+    min-width: 576px;
+    max-width: 992px;
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    grid-template-rows: 0.1fr 1.1fr auto 1.4fr 1fr 0.4fr 1fr 0.3fr;
+  }
+  .textPreCont {
+    font-size: 15px;
+    text-align: left;
+  }
+  .textPreCont p {
+    padding-left: 7px;
+  }
+  .textPreCont h2 {
+    padding: 1px 10px 0 7px;
+  }
+  .pie-pagina .grupo {
+    min-width: 576px;
+    max-width: 992px;
+  }
+  .pie-pagina .grupo .box {
+    color: black;
+    font-size: 20px;
+  }
+  .pie-pagina .grupo .box h2 {
+    padding-left: 38%;
+  }
+  .pie-pagina .grupo .red-social a {
+    margin-right: 60px;
+    padding: 5px 0px 0px 18%;
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .containerGeneralContacto {
+    min-width: 575px;
+    min-height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 1fr auto 1fr 1fr 1fr 0.3fr;
+    grid-template-areas: "naveg" "header" "txtCont" "cont" "x" "footer";
+  }
+  .textPreCont {
+    font-size: 16px;
+    text-align: justify;
+    padding: 18px 18px 0px 13px;
+    grid-area: txtCont;
+  }
+  .textPreCont h2 {
+    padding-left: 26%;
+  }
+  .textPreCont p {
+    font-size: 17px;
+  }
+}
+.containerGeneralGaleria {
+  width: 70%;
+  margin: 0 auto;
+  max-width: 1500px;
+  max-height: fit-content;
+  min-width: 1000px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-rows: 0.3fr 20% 80% 10% 7%;
+  grid-template-areas: "naveg naveg" "header header" "gral gral" "x x " "footer footer";
+}
+
+.generalImg {
+  grid-area: gral;
+}
+.generalImg .containerPol {
+  width: 100%;
+}
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .containerGeneralGaleria {
+    width: 100%;
+    min-width: 576px;
+    max-width: 992px;
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    grid-template-rows: 0.2fr 1.3fr 85% 10% 0.3fr;
+    grid-template-areas: "naveg naveg" "header header" "gral gral" "x x " "footer footer";
+  }
+}
+@media screen and (max-width: 575px) {
+  .containerGeneralGaleria {
+    min-width: 575px;
+    min-height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 1fr auto 1fr 0.3fr;
+    grid-template-areas: "naveg" "header" "gral" "x" "footer";
+  }
+}
+
+/*# sourceMappingURL=estilos.css.map */
